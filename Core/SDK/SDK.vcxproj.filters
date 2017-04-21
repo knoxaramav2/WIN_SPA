@@ -15,6 +15,12 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{d38e48ca-c3cd-4eca-b55f-e47bbd8a43ad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Cell">
+      <UniqueIdentifier>{1eeafb7d-9c29-4246-ac25-d0c3730cf86a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Console">
+      <UniqueIdentifier>{d7d54ea3-5573-4098-b58b-452832d89fd4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -29,6 +35,12 @@
     <ClInclude Include="Version.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Cell.h">
+      <Filter>Cell</Filter>
+    </ClInclude>
+    <ClInclude Include="CColor.h">
+      <Filter>Console</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Version.cpp">
@@ -36,6 +48,12 @@
     </ClCompile>
     <ClCompile Include="Global.cpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cell.cpp">
+      <Filter>Cell</Filter>
+    </ClCompile>
+    <ClCompile Include="CColor.cpp">
+      <Filter>Console</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

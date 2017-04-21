@@ -131,11 +131,15 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CColor.h" />
+    <ClInclude Include="Cell.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="global_config.h" />
     <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CColor.cpp" />
+    <ClCompile Include="Cell.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="Version.cpp" />
   </ItemGroup>
