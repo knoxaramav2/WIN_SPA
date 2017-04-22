@@ -19,9 +19,11 @@ struct G_Config
 
 	//switches
 	bool verbose;
+	bool debug;
 
 	//limits
 	unsigned long maxNodes;
+	unsigned maxThread;
 
 	//modules
 	vector<Version> moduleVersions;
