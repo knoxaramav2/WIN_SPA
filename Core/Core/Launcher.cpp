@@ -1,9 +1,42 @@
-#include <string>
+#define WIN32_LEAN_AND_MEAN
+
+#include <stdio.h>
+#include <windows.h>
+
 #include "../SDK/global_config.h"
 #include "../SDK/CColor.h"
+
 #include "MathUtil.h"
+#include "StringUtil.h"
+#include "Modules.h"
 
 G_Config config;
+
+using namespace UTIL;
+
+void verifyDirectories()
+{
+	LPCWSTR dirs [] = {
+		L"modules",
+		L"output",
+		L"projects",
+		L"log"
+	};
+
+	for (LPCWSTR dir : dirs)
+	{
+		string sdir = lpcwstr2str(dir);
+		DWORD ftyp = GetFileAttributesA(sdir.c_str());
+		if (ftyp & FILE_ATTRIBUTE_DIRECTORY && ftyp != INVALID_FILE_ATTRIBUTES) continue;
+
+		printf("Creating directory %s\r\n", sdir.c_str());
+
+		if (CreateDirectory(dir, NULL) == 0)
+		{
+			printf("! Failed to create directory -> %s\r\n", sdir.c_str());
+		}
+	}
+}
 
 int parseCmd(int argc, char ** argv)
 {
@@ -15,7 +48,8 @@ int parseCmd(int argc, char ** argv)
 
 		if (arg[0]!='-')
 		{
-			printc("Invalid opton ["+string(argv[i])+"]", RED);
+			printc("Invalid opton ["+string(argv[i])+"]\r\n", FOREGROUND_RED);
+			ret |= 1;
 			continue;
 		}
 
@@ -29,7 +63,8 @@ int parseCmd(int argc, char ** argv)
 				config.maxThread = atoi(argv[i]);
 			} else
 			{
-				printf("Unrecognized option %s\r\n", argv[i]);
+				printc("Unrecognized option " + string(argv[i]) + "\r\n", FOREGROUND_RED);
+				ret |= 1;
 			}
 		}else
 		{
@@ -41,7 +76,8 @@ int parseCmd(int argc, char ** argv)
 				case 'v': config.verbose = true; break;
 				case 'V': break;
 				default:
-					printf("Unrecognized option -%c\r\n", argv[i][j]);
+					printc("Unrecognized option -" + string(argv[i][j], 1) + "\r\n", FOREGROUND_RED);
+					ret |= 1;
 				}
 			}
 		}
@@ -52,10 +88,15 @@ int parseCmd(int argc, char ** argv)
 
 int main(int argc, char ** argv)
 {
+	ModuleManager modManager;
+
+	verifyDirectories();
+
 	int rcode = parseCmd(argc, argv);
 	if (rcode != 0) return rcode;
 
 	//detect and load modules
+	modManager.LoadModuleFolder("E:\\Dev\\C++\\WIN_SPA\\Core\\Core\\*");
 
 	//load network state
 

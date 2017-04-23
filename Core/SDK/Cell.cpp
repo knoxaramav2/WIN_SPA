@@ -6,12 +6,12 @@ Neuron::Neuron()
 
 	//initialize default values
 	//TODO implement variable defaults/base values
-	restingPotential = -70;
+	restingPotential = -70.0f;
 	charge = restingPotential;
-	decayRate = .95;
-	influxRate = 0;
-	threshold = -55;
-	stabilization = .5;
+	decayRate = .95f;
+	influxRate = 0.0f;
+	threshold = -55.0f;
+	stabilization = .5f;
 }
 
 Neuron::~Neuron()

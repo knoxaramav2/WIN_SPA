@@ -135,12 +135,15 @@
     <ClInclude Include="Cell.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="global_config.h" />
+    <ClInclude Include="ModInterface.h" />
+    <ClInclude Include="Module.h" />
     <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CColor.cpp" />
     <ClCompile Include="Cell.cpp" />
     <ClCompile Include="Global.cpp" />
+    <ClCompile Include="Module.cpp" />
     <ClCompile Include="Version.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

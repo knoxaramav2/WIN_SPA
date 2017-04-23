@@ -1,6 +1,6 @@
 #include "MathUtil.h"
 
-bool isInteger(std::string s)
+bool UTIL::isInteger(std::string s)
 {
 	for (char c : s)
 	{
@@ -13,7 +13,7 @@ bool isInteger(std::string s)
 	return true;
 }
 
-bool isDecimal(std::string s)
+bool UTIL::isDecimal(std::string s)
 {
 	bool isDecimal = false;
 
@@ -30,7 +30,7 @@ bool isDecimal(std::string s)
 	return isDecimal;
 }
 
-bool isNumeric(std::string s)
+bool UTIL::isNumeric(std::string s)
 {
 	for (char c : s)
 	{
@@ -43,7 +43,7 @@ bool isNumeric(std::string s)
 	return true;
 }
 
-unsigned long fnv1a(std::string s)
+unsigned long UTIL::fnv1a(std::string s)
 {
 	return 0;
 }

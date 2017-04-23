@@ -21,6 +21,12 @@
     <Filter Include="Console">
       <UniqueIdentifier>{d7d54ea3-5573-4098-b58b-452832d89fd4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Module">
+      <UniqueIdentifier>{8f166c86-d1b0-41d2-b0de-74dc67562b24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module\Interfaces">
+      <UniqueIdentifier>{19442535-e985-4255-9620-786f9f016d9a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -41,6 +47,12 @@
     <ClInclude Include="CColor.h">
       <Filter>Console</Filter>
     </ClInclude>
+    <ClInclude Include="Module.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="ModInterface.h">
+      <Filter>Module\Interfaces</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Version.cpp">
@@ -54,6 +66,9 @@
     </ClCompile>
     <ClCompile Include="CColor.cpp">
       <Filter>Console</Filter>
+    </ClCompile>
+    <ClCompile Include="Module.cpp">
+      <Filter>Module</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
