@@ -140,17 +140,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FileUtil.cpp" />
     <ClCompile Include="Launcher.cpp" />
-    <ClCompile Include="MathUtil.cpp" />
     <ClCompile Include="ModuleHandler.cpp" />
-    <ClCompile Include="StringUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FileUtil.h" />
-    <ClInclude Include="MathUtil.h" />
     <ClInclude Include="Modules.h" />
-    <ClInclude Include="StringUtil.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SDK\SDK.vcxproj">

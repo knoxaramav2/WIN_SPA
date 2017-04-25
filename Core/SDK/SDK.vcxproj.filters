@@ -27,6 +27,18 @@
     <Filter Include="Module\Interfaces">
       <UniqueIdentifier>{19442535-e985-4255-9620-786f9f016d9a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utils\Versioning">
+      <UniqueIdentifier>{01a777eb-23e9-4f22-9c69-4c266309dac5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\File">
+      <UniqueIdentifier>{a0330833-570e-48d2-a70d-1ac01de868f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Math">
+      <UniqueIdentifier>{1b524ff1-ccb5-4a44-b0a6-e1cc00652ac4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\String">
+      <UniqueIdentifier>{a68c3f23-7cbc-465b-9a20-e3404b6381c2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -37,9 +49,6 @@
     </ClInclude>
     <ClInclude Include="Globals.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Version.h">
-      <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="Cell.h">
       <Filter>Cell</Filter>
@@ -53,11 +62,20 @@
     <ClInclude Include="ModInterface.h">
       <Filter>Module\Interfaces</Filter>
     </ClInclude>
+    <ClInclude Include="Version.h">
+      <Filter>Utils\Versioning</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\FileUtil.h">
+      <Filter>Utils\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\MathUtil.h">
+      <Filter>Utils\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\StringUtil.h">
+      <Filter>Utils\String</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Version.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
     <ClCompile Include="Global.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
@@ -69,6 +87,18 @@
     </ClCompile>
     <ClCompile Include="Module.cpp">
       <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="Version.cpp">
+      <Filter>Utils\Versioning</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\FileUtil.cpp">
+      <Filter>Utils\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\MathUtil.cpp">
+      <Filter>Utils\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\StringUtil.cpp">
+      <Filter>Utils\String</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

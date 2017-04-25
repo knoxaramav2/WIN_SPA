@@ -131,6 +131,9 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Core\FileUtil.h" />
+    <ClInclude Include="..\Core\MathUtil.h" />
+    <ClInclude Include="..\Core\StringUtil.h" />
     <ClInclude Include="CColor.h" />
     <ClInclude Include="Cell.h" />
     <ClInclude Include="Globals.h" />
@@ -140,6 +143,9 @@
     <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Core\FileUtil.cpp" />
+    <ClCompile Include="..\Core\MathUtil.cpp" />
+    <ClCompile Include="..\Core\StringUtil.cpp" />
     <ClCompile Include="CColor.cpp" />
     <ClCompile Include="Cell.cpp" />
     <ClCompile Include="Global.cpp" />

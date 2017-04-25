@@ -5,7 +5,10 @@ using namespace std;
 
 ProjectHandle * LoadProject(string path)
 {
-	
+	ProjectHandle * pHandle = NULL;
+
+
+	return pHandle;
 }
 
 ProjectHandle ProjectManager::NewProject(std::string name)
