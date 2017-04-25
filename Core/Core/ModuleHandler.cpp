@@ -17,9 +17,12 @@ void ModuleManager::LoadModuleFolder(string path)
 	printf("%d\r\n", files.size());
 	for(string file : files)
 	{
-		//string extension = file.substr(file.find_last_of('.'), file.length());
+		string extension = UTIL::getExtention(file);
+		if (extension != ".dll")
+			continue;
 
-		printf("%s\r\n", file.c_str());
+		//TODO
+		//load module
 	}
 
 	Sleep(5000);

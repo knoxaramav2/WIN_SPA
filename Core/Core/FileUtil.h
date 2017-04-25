@@ -10,6 +10,8 @@ using namespace std;
 namespace UTIL
 {
 	vector <string> getFilesInFolder(string path);
+
+	string getExtention(string file);
 }
 
 

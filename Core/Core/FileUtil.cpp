@@ -28,3 +28,13 @@ vector <string> UTIL::getFilesInFolder(string path)
 
 	return list;
 }
+
+string UTIL::getExtention(string file)
+{
+	size_t pos = file.find_first_of('.');
+
+	if (pos == string::npos)
+		return "";
+
+	return file.substr(pos, file.length()-1);
+}
