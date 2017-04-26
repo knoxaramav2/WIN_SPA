@@ -9,6 +9,7 @@
 #include "MathUtil.h"
 #include "StringUtil.h"
 #include "Modules.h"
+#include "ProjectManager.h"
 
 G_Config config;
 
@@ -42,6 +43,13 @@ int parseCmd(int argc, char ** argv)
 {
 	int ret = 0;
 
+	//post cmd operations
+	bool newProject = false;
+	bool loadProject = false;
+
+	//buffers
+	string projName;
+
 	for(int i = 1; i < argc; ++i)
 	{
 		string arg = string(argv[i]);
@@ -55,15 +63,42 @@ int parseCmd(int argc, char ** argv)
 
 		if (argv[i][1]=='-')
 		{
-			if (arg == "--maxnode" && isInteger(argv[++i]))
+			if (arg == "--max_node" && isInteger(argv[++i]))
 			{
 				config.maxNodes = atoi(argv[i]);
-			} else if (arg == "--maxThreads" && isInteger(argv[++i]))
+			} else if (arg == "--max_threads" && isInteger(argv[++i]))
 			{
 				config.maxThread = atoi(argv[i]);
-			} else
+			}
+			else if (arg == "--new_proj")
 			{
-				printc("Unrecognized option " + string(argv[i]) + "\r\n", FOREGROUND_RED);
+				if (i < argc)
+				{
+					newProject = true;
+					projName = argv[++i];
+				}
+				else
+				{
+					printc("Requires a project name\r\n", RED);
+					ret |= -1;
+				}
+			}
+			else if (arg == "--load_proj")
+			{
+				if (i < argc)
+				{
+					loadProject = true;
+					projName = argv[++i];
+				}
+				else
+				{
+					printc("Requires a project name\r\n", RED);
+					ret |= -1;
+				}
+			}
+			else
+			{
+				printc("Unrecognized option " + string(argv[i]) + "\r\n", RED);
 				ret |= 1;
 			}
 		}else
@@ -83,6 +118,17 @@ int parseCmd(int argc, char ** argv)
 		}
 	}
 	
+	//verify post cmd operations
+	if (newProject && loadProject)
+	{
+		printc("Cannot load and create a project simultaneously\r\n", RED);
+		return ret |= 1;
+	}
+
+	//launch post cmd operations
+	if (newProject) ProjectManager::NewProject(projName);
+	if (loadProject) ProjectManager::LoadProject(projName);
+
 	return ret;
 }
 
@@ -99,6 +145,7 @@ int main(int argc, char ** argv)
 	modManager.LoadModuleFolder("E:\\Dev\\C++\\WIN_SPA\\Core\\Core\\*");
 
 	//load network state
+
 
 	//execute
 

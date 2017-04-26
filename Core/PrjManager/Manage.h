@@ -18,8 +18,10 @@ namespace PManager
 
 	class ProjectManager
 	{
-		static ProjectHandle NewProject(std::string name);
-		static ProjectHandle LoadProject(std::string name);
+
+	public:
+		static MANAGE_EXPORTS_API ProjectHandle NewProject(std::string name);
+		static MANAGE_EXPORTS_API ProjectHandle LoadProject(std::string name);
 	};
 }
 

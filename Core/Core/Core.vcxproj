@@ -142,14 +142,22 @@
   <ItemGroup>
     <ClCompile Include="Launcher.cpp" />
     <ClCompile Include="ModuleHandler.cpp" />
+    <ClCompile Include="ProjectManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Modules.h" />
+    <ClInclude Include="ProjectManager.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SDK\SDK.vcxproj">
       <Project>{8713018b-15f0-4f06-a017-38876f2bc0c0}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Core.rc" />
+    <ResourceCompile Include="Core1.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

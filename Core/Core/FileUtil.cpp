@@ -1,8 +1,5 @@
 #include "FileUtil.h"
-
-#include <windows.h>
 #include "StringUtil.h"
-#include <iostream>
 
 vector <string> UTIL::getFilesInFolder(string path)
 {
@@ -37,4 +34,27 @@ string UTIL::getExtention(string file)
 		return "";
 
 	return file.substr(pos, file.length()-1);
+}
+
+bool UTIL::fileExists(string file)
+{
+	struct stat buffer;
+	return (stat(file.c_str(), &buffer) == 0);
+}
+
+
+/*
+ *References
+ *https://stackoverflow.com/questions/12774207/fastest-way-to-check-if-a-file-exist-using-standard-c-c11-c
+ */
+HANDLE UTIL::createFile(string file)
+{
+	return NULL;
+}
+
+bool UTIL::createDirectory(string file)
+{
+	return !CreateDirectory(
+		str2wstr(file).c_str(),
+		NULL);
 }

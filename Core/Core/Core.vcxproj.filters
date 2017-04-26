@@ -16,6 +16,9 @@
     <Filter Include="Module">
       <UniqueIdentifier>{9b24a6ab-f9dd-47e7-994e-205b61e2a743}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Projects">
+      <UniqueIdentifier>{d1087cba-4a71-4e59-b90e-f2d18e28fd2c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Launcher.cpp">
@@ -24,10 +27,30 @@
     <ClCompile Include="ModuleHandler.cpp">
       <Filter>Module</Filter>
     </ClCompile>
+    <ClCompile Include="ProjectManager.cpp">
+      <Filter>Source Files\Projects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Modules.h">
       <Filter>Module</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectManager.h">
+      <Filter>Source Files\Projects</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Core.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="Core1.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
