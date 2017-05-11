@@ -8,6 +8,8 @@
  * Shared between all modules
  */
 
+//global statics
+
 struct G_Config
 {
 	G_Config();
@@ -24,6 +26,7 @@ struct G_Config
 	//limits
 	unsigned long maxNodes;
 	unsigned maxThread;
+	unsigned maxMb;
 
 	//modules
 	vector<Version> moduleVersions;

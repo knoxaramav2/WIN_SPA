@@ -1,0 +1,11 @@
+#This file outlines hash codes used by the program's switch statements
+#in order to improve appearance and (very slightly) improve performance
+#mostly, kinda wish c++ would implement string switching
+
+#command lines strings (32 bit fnv_1a only, lowercase enforced)
+--new          86631055
+--load         565160199
+--maxnode      1505474855
+--maxmem       3110576644
+--maxthread    3772897447
+

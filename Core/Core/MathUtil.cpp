@@ -43,7 +43,43 @@ bool UTIL::isNumeric(std::string s)
 	return true;
 }
 
-unsigned long UTIL::fnv1a(std::string s)
+unsigned long UTIL::fnv1a(std::string str)
 {
-	return 0;
+	// ReSharper disable once CppJoinDeclarationAndAssignment
+	long long unsigned hash;
+
+	#if _WIN64
+		//printf("64 bit\n");
+		hash = 14695981039346656037ULL;//FNV offset
+	#else
+		//printf("32 bit\n");
+	// ReSharper disable once CppJoinDeclarationAndAssignment
+		hash = 2166136261;
+	#endif
+
+		//64 prime 0xb3
+		//32 prime 0x93
+
+		for (size_t x = 0; x < str.length(); ++x)
+		{
+			hash ^= str[x];
+	#if _WIN64==64
+			hash *= 0xb3;
+	#else
+			hash *= 0x93;
+	#endif
+	}
+	return hash;
+}
+
+unsigned long UTIL::fnv1a32(std::string str)
+{
+	long long unsigned hash = 2166136261;
+
+	for (size_t x = 0; x < str.length(); ++x)
+	{
+		hash ^= str[x];
+		hash *= 0x93;
+	}
+	return hash;
 }

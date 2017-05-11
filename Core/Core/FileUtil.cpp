@@ -58,3 +58,11 @@ bool UTIL::createDirectory(string file)
 		str2wstr(file).c_str(),
 		NULL);
 }
+
+bool UTIL::directoryExists(string path)
+{
+	wstring wpath = str2wstr(path);
+	DWORD dwAttr = GetFileAttributes(wpath.c_str());
+	return (dwAttr != INVALID_FILE_ATTRIBUTES &&
+		(dwAttr & FILE_ATTRIBUTE_DIRECTORY));
+}

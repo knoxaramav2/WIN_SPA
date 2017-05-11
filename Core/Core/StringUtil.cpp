@@ -35,3 +35,25 @@ std::string UTIL::lpcwstr2str(LPCWSTR s)
 
 	return buf;
 }
+
+std::vector<std::string> UTIL::splitString(char * raw, char split)
+{
+	std::vector<std::string> ret;
+	
+	char * s = raw;
+	char * e = raw;
+	char * x = raw + strlen(raw);
+
+	while(*e!=NULL)
+	{
+		if (*e == split || (e+1) == x)
+		{
+			ret.push_back(std::string(s, (e+1)==x? e+1: e ));
+			s = e + 1;
+		}
+
+		++e;
+	};
+
+	return ret;
+}

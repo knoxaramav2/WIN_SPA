@@ -11,7 +11,8 @@ namespace UTIL
 	bool isNumeric(std::string s);
 
 	//hashes
-	unsigned long fnv1a(std::string s);
+	unsigned long fnv1a(std::string str);
+	unsigned long fnv1a32(std::string str);
 }
 
 

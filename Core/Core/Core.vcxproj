@@ -140,11 +140,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cmd.cpp" />
     <ClCompile Include="Launcher.cpp" />
     <ClCompile Include="ModuleHandler.cpp" />
     <ClCompile Include="ProjectManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Global.h" />
     <ClInclude Include="Modules.h" />
     <ClInclude Include="ProjectManager.h" />
     <ClInclude Include="resource.h" />

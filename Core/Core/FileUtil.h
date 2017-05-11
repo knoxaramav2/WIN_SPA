@@ -2,7 +2,6 @@
 #ifndef FILEUTIL
 #define FILEUTIL
 
-#include <string>
 #include <vector>
 #include <windows.h>
 
@@ -15,6 +14,7 @@ namespace UTIL
 	string getExtention(string file);
 
 	bool fileExists(string file);
+	bool directoryExists(string path);
 
 	HANDLE createFile(string file);
 	bool createDirectory(string file);

@@ -30,6 +30,9 @@
     <ClCompile Include="ProjectManager.cpp">
       <Filter>Source Files\Projects</Filter>
     </ClCompile>
+    <ClCompile Include="Cmd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Modules.h">
@@ -43,6 +46,9 @@
     </ClInclude>
     <ClInclude Include="ProjectManager.h">
       <Filter>Source Files\Projects</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

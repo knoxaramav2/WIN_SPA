@@ -39,98 +39,7 @@ void verifyDirectories()
 	}
 }
 
-int parseCmd(int argc, char ** argv)
-{
-	int ret = 0;
-
-	//post cmd operations
-	bool newProject = false;
-	bool loadProject = false;
-
-	//buffers
-	string projName;
-
-	for(int i = 1; i < argc; ++i)
-	{
-		string arg = string(argv[i]);
-
-		if (arg[0]!='-')
-		{
-			printc("Invalid opton ["+string(argv[i])+"]\r\n", FOREGROUND_RED);
-			ret |= 1;
-			continue;
-		}
-
-		if (argv[i][1]=='-')
-		{
-			if (arg == "--max_node" && isInteger(argv[++i]))
-			{
-				config.maxNodes = atoi(argv[i]);
-			} else if (arg == "--max_threads" && isInteger(argv[++i]))
-			{
-				config.maxThread = atoi(argv[i]);
-			}
-			else if (arg == "--new_proj")
-			{
-				if (i < argc)
-				{
-					newProject = true;
-					projName = argv[++i];
-				}
-				else
-				{
-					printc("Requires a project name\r\n", RED);
-					ret |= -1;
-				}
-			}
-			else if (arg == "--load_proj")
-			{
-				if (i < argc)
-				{
-					loadProject = true;
-					projName = argv[++i];
-				}
-				else
-				{
-					printc("Requires a project name\r\n", RED);
-					ret |= -1;
-				}
-			}
-			else
-			{
-				printc("Unrecognized option " + string(argv[i]) + "\r\n", RED);
-				ret |= 1;
-			}
-		}else
-		{
-			for(int j = 1; j < strlen(argv[i]); ++j)
-			{
-				switch(argv[i][j])
-				{
-				case 'd': config.debug = true; break;
-				case 'v': config.verbose = true; break;
-				case 'V': break;
-				default:
-					printc("Unrecognized option -" + string(argv[i][j], 1) + "\r\n", FOREGROUND_RED);
-					ret |= 1;
-				}
-			}
-		}
-	}
-	
-	//verify post cmd operations
-	if (newProject && loadProject)
-	{
-		printc("Cannot load and create a project simultaneously\r\n", RED);
-		return ret |= 1;
-	}
-
-	//launch post cmd operations
-	if (newProject) ProjectManager::NewProject(projName);
-	if (loadProject) ProjectManager::LoadProject(projName);
-
-	return ret;
-}
+int parseCmd(int argc, char ** argv, G_Config config);
 
 int main(int argc, char ** argv)
 {
@@ -138,14 +47,11 @@ int main(int argc, char ** argv)
 
 	verifyDirectories();
 
-	int rcode = parseCmd(argc, argv);
+	int rcode = parseCmd(argc, argv, config);
 	if (rcode != 0) return rcode;
 
 	//detect and load modules
 	modManager.LoadModuleFolder("E:\\Dev\\C++\\WIN_SPA\\Core\\Core\\*");
-
-	//load network state
-
 
 	//execute
 
